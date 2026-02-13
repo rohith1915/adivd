@@ -1,0 +1,168 @@
+body{
+ margin:0;
+ font-family:'Poppins',sans-serif;
+ background:black;
+ color:white;
+ overflow-x:hidden;
+}
+
+/* PASSWORD */
+#passwordScreen{
+ position:fixed;
+ width:100%;
+ height:100%;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ background:black;
+ z-index:999999;
+}
+
+#passwordScreen input{
+ padding:15px;
+ font-size:18px;
+ border-radius:10px;
+ border:none;
+ margin:10px;
+}
+
+/* INTRO */
+#cinematicIntro{
+ position:fixed;
+ width:100%;
+ height:100%;
+ z-index:9999;
+ transition:opacity 1s;
+}
+
+canvas{
+ display:block;
+}
+
+#introText{
+ position:absolute;
+ top:40%;
+ width:100%;
+ text-align:center;
+}
+
+.introLine{
+ opacity:0;
+ font-family:"Great Vibes";
+ font-size:clamp(28px,6vw,50px);
+ animation:fadeIn 3s forwards;
+}
+
+.introLine:nth-child(2){animation-delay:3s;}
+.introLine:nth-child(3){animation-delay:6s;}
+
+@keyframes fadeIn{
+ from{opacity:0; transform:translateY(40px);}
+ to{opacity:1;}
+}
+
+/* MAIN */
+.container{
+ position:fixed;
+ top:50%;
+ left:50%;
+ transform:translate(-50%,-50%);
+ background:rgba(255,255,255,0.1);
+ backdrop-filter:blur(20px);
+ padding:30px;
+ border-radius:20px;
+ text-align:center;
+ display:none;
+ width:85%;
+ max-width:400px;
+}
+
+.name{
+ color:#ff2e63;
+ font-family:"Great Vibes";
+ font-size:40px;
+}
+
+/* BUTTONS */
+button{
+ padding:14px 28px;
+ border:none;
+ border-radius:30px;
+ font-size:18px;
+ margin:8px;
+ cursor:pointer;
+}
+
+#yesBtn{
+ background:#ff2e63;
+ color:white;
+ box-shadow:0 0 15px rgba(255,46,99,0.6);
+}
+
+#noBtn{
+ background:#333;
+ color:white;
+ position:absolute;
+}
+
+/* PETALS */
+#petalCanvas{
+ position:fixed;
+ width:100%;
+ height:100%;
+ pointer-events:none;
+}
+
+/* FIREWORK */
+.firework{
+ position:fixed;
+ font-size:30px;
+ animation:fireworkAnim 1.5s forwards;
+}
+
+@keyframes fireworkAnim{
+ to{
+  transform:translate(var(--x),var(--y)) scale(1.5);
+  opacity:0;
+ }
+}
+
+/* HEART */
+#heart3DContainer{
+ position:fixed;
+ bottom:10px;
+ right:10px;
+ width:180px;
+ height:180px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+ button{
+  width:100%;
+ }
+ #heart3DContainer{
+  width:140px;
+  height:140px;
+ }
+}
+#lovePhoto{
+ width:220px;
+ max-width:80%;
+ border-radius:20px;
+ margin:15px 0;
+ box-shadow:0 0 25px rgba(255,46,99,0.6);
+ animation:photoFade 2s ease;
+}
+
+@keyframes photoFade{
+ from{
+  opacity:0;
+  transform:scale(0.8);
+ }
+ to{
+  opacity:1;
+  transform:scale(1);
+ }
+}
